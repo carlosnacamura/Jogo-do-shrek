@@ -16,8 +16,7 @@ let heroImage = new Image();
 heroImage.onload = () => {
   heroReady = true;
 };
-heroImage.src =
-  "imgs/shrek.png";
+heroImage.src = "imgs/shrek.png";
 let monsterReady = false;
 let monsterImage = new Image();
 monsterImage.onload = () => {
