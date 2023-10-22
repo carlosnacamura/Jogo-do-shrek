@@ -1,5 +1,6 @@
 const canvas = document.createElement("canvas");
 const dimensao = canvas.getContext("2d");
+const audio_cebolas = document.querySelector(".cebolas")
 canvas.width = 600;
 canvas.height = 300;
 document.body.appendChild(canvas);
@@ -72,6 +73,7 @@ const update = (modificador) => {
     monster.y <= hero.y + 32
   ) {
     ++monstrosPegos;
+    audio_cebolas.play()
     reset();
   }
 };
