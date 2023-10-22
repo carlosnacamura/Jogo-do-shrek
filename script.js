@@ -115,9 +115,7 @@ const main = () => {
    if (monstrosPegos == 100){
      memes.style.display= "block"
    }
-   if (monstrosPegos < 0){
-     audio_sucesso.play()
-   }
+   
 };
 
 const w = window;
@@ -126,6 +124,12 @@ const requestAnimationFrame =
 let then = Date.now();
 reset();
 main();
-pegar_cebolas.addEventListener("click",()=>[
+pegar_cebolas.addEventListener("click",()=>{
   monstrosPegos--
-])
+  if (monstrosPegos == 0){
+    audio_sucesso.play()
+  } else if (monstrosPegos < 0){
+    monstrosPegos = 0
+    audio_sucesso.play()
+  }
+})
