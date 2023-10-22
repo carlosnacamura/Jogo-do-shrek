@@ -2,6 +2,9 @@ const canvas = document.createElement("canvas");
 const dimensao = canvas.getContext("2d");
 const audio_cebolas = document.querySelector(".cebolas")
 const audio_pix = document.querySelector(".pix")
+const audio_sucesso = document.querySelector(".sucesso")
+const memes = document.querySelector(".memes")
+const pegar_cebolas = document.querySelector(".pegar_cebolas")
 const cebolasPegas = 100
 canvas.width = 600;
 canvas.height = 300;
@@ -108,6 +111,13 @@ const main = () => {
 
   then = now;
   requestAnimationFrame(main);
+  
+   if (monstrosPegos == 100){
+     memes.style.display= "block"
+   }
+   if (monstrosPegos < 0){
+     audio_sucesso.play()
+   }
 };
 
 const w = window;
@@ -116,3 +126,6 @@ const requestAnimationFrame =
 let then = Date.now();
 reset();
 main();
+pegar_cebolas.addEventListener("click",()=>[
+  monstrosPegos--
+])
